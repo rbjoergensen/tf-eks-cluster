@@ -1,5 +1,5 @@
-navigatorName: GitHub Template
-category: GitHub
+navigatorName: Terraform EKS Module
+category: Terraform
 includeLink: true
 files:
 - file: Readme.md

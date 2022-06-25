@@ -28,7 +28,7 @@ resource "aws_route_table" "main" {
 }
 
 resource "aws_subnet" "subnets" {
-  for_each = {for subnet in local.subnets: subnet.cidr => subnet}
+  for_each = {for subnet in var.subnets: subnet.cidr => subnet}
   vpc_id                  = aws_vpc.main.id
   cidr_block              = each.value.cidr
   availability_zone       = each.value.zone
