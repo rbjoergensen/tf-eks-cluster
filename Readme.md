@@ -67,7 +67,5 @@ module "cluster" {
     { cidr = "10.0.2.0/24", zone = "eu-central-1c" }
   ]
   log_retention     = 7
-
-
 }
 ```
