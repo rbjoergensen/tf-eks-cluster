@@ -54,18 +54,22 @@ module "cluster" {
     aws = aws.frankfurt,
   }
   source            = "git::https://github.com/rbjoergensen/tf-eks-cluster.git?ref=v1"
+
   cluster_name      = "cluster-01"
   cluster_version   = "1.22"
+
+  log_retention     = 7
+
   ec2_intance_types = [ "t3.medium" ]
   nodegroup_desired = 1
   nodegroup_max     = 1
   nodegroup_min     = 1
+
   vpc_cidr          = "10.0.0.0/16"
   subnets           = [
     { cidr = "10.0.0.0/24", zone = "eu-central-1a" },
     { cidr = "10.0.1.0/24", zone = "eu-central-1b" },
     { cidr = "10.0.2.0/24", zone = "eu-central-1c" }
   ]
-  log_retention     = 7
 }
 ```
